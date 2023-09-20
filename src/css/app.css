@@ -1,0 +1,17 @@
+@import "buttons.css";
+@import "recipe-list.css";
+@import "recipes.css";
+@import "RecipeIngredientsEdit.css";
+@import "recipe-edit.css";
+
+* {
+  /* background-color: red; */
+  margin: 0;
+}
+
+.flex {
+  /* background-color: red; */
+  display: flex;
+  justify-content: start;
+  min-height: 100vh;
+}

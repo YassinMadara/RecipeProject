@@ -1,0 +1,6 @@
+.recipe-list {
+  border-right: solid 10px black;
+  border-top-right-radius: 35px;
+  border-bottom-right-radius: 35px;
+  width: 50%;
+}

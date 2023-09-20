@@ -1,0 +1,40 @@
+.recipe-edit {
+  padding: 2rem;
+  font-size: 2rem;
+}
+.recipe-edit--grid input,
+textarea {
+  border: solid 2px black;
+  font-size: 1.5rem;
+  padding: 0.3em 0.5em;
+}
+
+.recipe-edit--grid textarea {
+  height: 150px;
+  resize: none;
+}
+
+.btn-add-container {
+  padding-top: 25px;
+  text-align: center;
+}
+
+.btn-add-container button {
+  font-size: 1.5rem;
+  padding: 0.3em 0.5em;
+}
+
+.recipe-edit--grid {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 20px 10px;
+  justify-content: start;
+}
+
+.recipe-edit--flex {
+  display: flex;
+  flex-direction: column;
+}
+.recipe-edit--btm {
+  align-self: end;
+}

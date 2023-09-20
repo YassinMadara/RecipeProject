@@ -1,0 +1,37 @@
+.recipes-container {
+  padding: 1rem;
+  margin: 5px;
+  border: ridge 5px darkcyan;
+  border-radius: 35px;
+}
+
+.recipe-header {
+  padding-bottom: 1em;
+}
+
+.flex-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.recipe-title {
+  size: 100px;
+  font-size: 1.5rem;
+}
+
+.recipe-indent {
+  margin-top: 0.2em;
+  margin-left: 1.5em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  /* grid-template-rows: 1fr 1fr; */
+  /* gap: 10px; */
+  justify-content: start;
+}
+
+.recipe-instruction {
+  white-space: pre-wrap;
+}
