@@ -11,6 +11,11 @@ const localStorageKey = "RecipeProject.app";
 function App() {
   const [recipes, setRecipes] = useState(sampleRecipes);
 
+  const [selectedRecipeId, setSelectedRecipeId] = useState();
+  const selectedRecipe = recipes.find(
+    (recipe) => recipe.id === selectedRecipeId
+  );
+
   useEffect(() => {
     const recipeJSON = localStorage.getItem(localStorageKey);
     if (recipeJSON !== null) {
@@ -24,12 +29,20 @@ function App() {
 
   const contextValue = {
     handleRecipeDelete,
+    setSelectedRecipeId,
   };
+
+  function handleRecipeChange(id, recipe) {
+    const newRecipe = [...recipes];
+    const index = newRecipe.findIndex((r) => r.id === id);
+    newRecipe[index] = recipe;
+    setRecipes(newRecipe);
+  }
 
   function handleRecipeAdd() {
     const newRecipe = {
       id: uuidv4(),
-      name: "Name",
+      name: "",
       servings: undefined,
       cookTime: "",
       instructions: "",
@@ -43,6 +56,7 @@ function App() {
     };
 
     setRecipes([...recipes, newRecipe]);
+    setSelectedRecipeId(newRecipe.id);
   }
 
   function handleRecipeDelete(id) {
@@ -54,10 +68,16 @@ function App() {
   }
 
   return (
-    <div className="flex">
+    <div className="app flex">
       <RecipeContext.Provider value={contextValue}>
         <RecipeList recipes={recipes} handleRecipeAdd={handleRecipeAdd} />
-        <RecipeEdit recipes={recipes} />
+        {selectedRecipe && (
+          <RecipeEdit
+            selectedRecipe={selectedRecipe}
+            setSelectedRecipeId={setSelectedRecipeId}
+            handleRecipeChange={handleRecipeChange}
+          />
+        )}
       </RecipeContext.Provider>
     </div>
   );
@@ -73,19 +93,14 @@ const sampleRecipes = [
       "1. Put salt on chicken\n2. Put chicken in oven\n3. Eat chicken",
     ingredients: [
       {
-        id: 1,
+        id: 10,
         name: "Chicken",
         amount: "2 Pound",
       },
       {
-        id: 2,
+        id: 11,
         name: "Salt",
         amount: "1 Tbs",
-      },
-      {
-        id: 5,
-        name: "Pepper",
-        // amount: "4 Tbs",
       },
     ],
   },
@@ -97,12 +112,12 @@ const sampleRecipes = [
     instructions: "1. Put salt on Meat\n2. Put Meat in oven\n3. Eat Meat",
     ingredients: [
       {
-        id: 1,
+        id: 20,
         name: "Meat",
         amount: "3 Pound",
       },
       {
-        id: 2,
+        id: 21,
         name: "Paprika",
         amount: "2 Tbs",
       },

@@ -2,23 +2,22 @@ import React, { useContext } from "react";
 import Ingredient from "./Ingredient";
 import { RecipeContext } from "./App";
 
-export default function Recipes(props) {
-  const { id, name, servings, cookTime, instructions, ingredients } = props;
-  const ele = ingredients.map((ingredient) => {
-    return (
-      <div className="grid">
-        <Ingredient key={ingredient.id} {...ingredient} />
-      </div>
-    );
+export default function Recipes({ recipe, searching }) {
+  const { id, name, servings, cookTime, instructions, ingredients } = recipe;
+
+  const ingredientElement = ingredients.map((ingredient) => {
+    return <Ingredient key={ingredient.id} {...ingredient} />;
   });
 
-  const { handleRecipeDelete } = useContext(RecipeContext);
+  const { handleRecipeDelete, setSelectedRecipeId } = useContext(RecipeContext);
   return (
     <div className="recipes-container">
       <div className="flex-header recipe-header">
-        <label className="recipe-title">{name}</label>
+        <label id="header">{name}</label>
         <div>
-          <button className="btn">Edit</button>
+          <button className="btn" onClick={() => setSelectedRecipeId(id)}>
+            Edit
+          </button>
           <button
             className="btn btn-danger btn-margin"
             onClick={() => {
@@ -30,20 +29,20 @@ export default function Recipes(props) {
         </div>
       </div>
       <div>
-        <label>Cook Time:</label>
-        <label>{servings}</label>
+        <label>Cook Time: </label>
+        <label>{cookTime}</label>
       </div>
       <div>
-        <label>Servings:</label>
-        <label>{cookTime}</label>
+        <label>Servings: </label>
+        <label>{servings}</label>
       </div>
       <div>
         <label>Instructions:</label>
         <div className="recipe-indent  recipe-instruction">{instructions}</div>
       </div>
       <div>
-        <span>Ingredients:</span>
-        <div className="recipe-indent">{ele}</div>
+        <label>Ingredients:</label>
+        <div className="recipe-indent grid">{ingredientElement}</div>
       </div>
     </div>
   );

@@ -1,17 +1,21 @@
+.recipe-edit--grid label {
+  font-size: 2rem;
+}
+
 .recipe-edit {
   padding: 2rem;
   font-size: 2rem;
 }
 .recipe-edit--grid input,
-textarea {
+.recipe-edit--grid textarea {
   border: solid 2px black;
   font-size: 1.5rem;
   padding: 0.3em 0.5em;
+  resize: none;
 }
 
 .recipe-edit--grid textarea {
   height: 150px;
-  resize: none;
 }
 
 .btn-add-container {
@@ -35,6 +39,20 @@ textarea {
   display: flex;
   flex-direction: column;
 }
-.recipe-edit--btm {
+.recipe-edit--btn {
   align-self: end;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 3rem;
+  border-radius: 100px;
+  margin-bottom: 0.2em;
+}
+.recipe-edit--btn:hover,
+.recipe-edit--btn:focus {
+  background-color: rgba(211, 211, 211, 0.902);
+}
+
+.ingre-label {
+  font-size: 1.6rem;
 }

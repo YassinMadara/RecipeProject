@@ -3,14 +3,19 @@
 @import "recipes.css";
 @import "RecipeIngredientsEdit.css";
 @import "recipe-edit.css";
+@import "RecipeIngredientsEdit";
+@import "recipe-search.css";
 
 * {
-  /* background-color: red; */
   margin: 0;
 }
 
+.app {
+  max-height: 100vh;
+  max-width: 100vw;
+}
+
 .flex {
-  /* background-color: red; */
   display: flex;
   justify-content: start;
   min-height: 100vh;

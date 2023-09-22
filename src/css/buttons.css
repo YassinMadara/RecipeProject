@@ -1,26 +1,27 @@
 .btn {
-  background-color: cadetblue;
+  background-color: hsl(200, 70%, 50%);
   align-self: center;
   color: white;
   font-size: 1.5rem;
   border: solid 3px;
   border-radius: 5px;
+  padding: 0.3em 0.5em;
 }
 
 .btn:hover,
 .btn:focus {
-  background-color: rgb(30, 102, 104);
+  background-color: hsl(200, 90%, 35%);
 }
 .btn-container {
   text-align: center;
 }
 
 .btn-danger {
-  background-color: rgb(189, 0, 0);
+  background-color: hsl(10, 70%, 50%);
 }
 .btn-danger:hover,
 .btn-danger:focus {
-  background-color: rgb(132, 3, 3);
+  background-color: hsl(0, 90%, 35%);
 }
 
 .btn-margin {

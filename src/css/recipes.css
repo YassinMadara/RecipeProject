@@ -1,22 +1,28 @@
 .recipes-container {
   padding: 1rem;
   margin: 5px;
-  border: ridge 5px darkcyan;
+  border: ridge 5px hsl(200, 70%, 50%);
   border-radius: 35px;
+}
+.recipes-container label {
+  font-size: 1.5rem;
+}
+
+.recipes-container div div {
+  font-size: 1.2rem;
 }
 
 .recipe-header {
   padding-bottom: 1em;
+  align-items: center;
+}
+#header {
+  font-size: 3em;
 }
 
 .flex-header {
   display: flex;
   justify-content: space-between;
-}
-
-.recipe-title {
-  size: 100px;
-  font-size: 1.5rem;
 }
 
 .recipe-indent {
@@ -27,8 +33,6 @@
 .grid {
   display: grid;
   grid-template-columns: 1fr 4fr;
-  /* grid-template-rows: 1fr 1fr; */
-  /* gap: 10px; */
   justify-content: start;
 }
 
